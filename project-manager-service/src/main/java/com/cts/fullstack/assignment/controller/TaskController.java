@@ -37,7 +37,7 @@ public class TaskController {
 		return new ResponseEntity<>(taskDtoList, HttpStatus.OK);
 	}
 	
-	@GetMapping(path="/{projectId}")
+	@GetMapping(path="/projecttasks/{projectId}")
 	public ResponseEntity<Object> getTaskByProject(@PathVariable("projectId") int projectId){
 		List<Task> taskList = taskService.getTasksByProjectId(projectId);
 		List<TaskDto> taskDtoList = taskList.stream().map(task -> taskService.getTaskDtoFromTask(task)).collect(Collectors.toList());

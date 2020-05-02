@@ -35,12 +35,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void updateUser(User user) {
-        userRepository.save(user);
+    	userRepository.save(user);
     }
 
     @Override
     public void deleteUser(User user) {
-        userRepository.save(user);
+        userRepository.delete(user);
     }
 
     @Override

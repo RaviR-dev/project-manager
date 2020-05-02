@@ -473,7 +473,7 @@ public class TaskControllerTest extends TestCase {
         task.setProject(savedProject);
         taskRepository.save(task);
 
-        ResponseEntity<String> response = testRestTemplate.getForEntity(baseUrl.concat("/").concat(savedProject.getProjectId().toString()), String.class);
+        ResponseEntity<String> response = testRestTemplate.getForEntity(baseUrl.concat("/projecttasks/").concat(savedProject.getProjectId().toString()), String.class);
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 
         List<TaskDto> taskDtoByProject = convertJsonToTaskDto(response.getBody());

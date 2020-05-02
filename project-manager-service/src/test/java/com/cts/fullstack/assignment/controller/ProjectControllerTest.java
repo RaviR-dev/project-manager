@@ -25,13 +25,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.cts.fullstack.assignment.ProjectManagerApplication;
 import com.cts.fullstack.assignment.dto.ProjectDto;
-import com.cts.fullstack.assignment.entities.ParentTask;
 import com.cts.fullstack.assignment.entities.Project;
-import com.cts.fullstack.assignment.entities.Task;
 import com.cts.fullstack.assignment.entities.User;
-import com.cts.fullstack.assignment.repository.ParentTaskRepository;
 import com.cts.fullstack.assignment.repository.ProjectRepository;
-import com.cts.fullstack.assignment.repository.TaskRepository;
 import com.cts.fullstack.assignment.repository.UserRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
@@ -54,12 +50,6 @@ public class ProjectControllerTest extends TestCase {
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private ParentTaskRepository parentTaskRepository;
-
-    @Autowired
-    private TaskRepository taskRepository;
     
     private Date startDate;
     
@@ -300,28 +290,13 @@ public class ProjectControllerTest extends TestCase {
         project.setEndDate(endDate);
         project.setPriority(5);
         project.setUser(savedUser);
-        Project savedProject = projectRepository.save(project);
-
-        ParentTask parentTask = new ParentTask();
-        parentTask.setParentTask("Test Parent Task");
-        ParentTask savedParentTask = parentTaskRepository.save(parentTask);
-
-        Task task = new Task();
-        task.setTask("Task1");
-        task.setStatus(true);
-        task.setPriority(2);
-        task.setStartDate(startDate);
-        task.setEndDate(endDate);
-        task.setParentTask(savedParentTask);
-        task.setUser(savedUser);
-        task.setProject(savedProject);
-        taskRepository.save(task);
+        projectRepository.save(project);
 
         ResponseEntity<String> response = testRestTemplate.getForEntity(baseUrl.concat("/list"), String.class);
         assertThat(response.getStatusCode(), equalTo(HttpStatus.OK));
 
-        List<ProjectDto> taskDto = convertJsonToProjectDto(response.getBody());
-        assertThat(taskDto.size(), equalTo(1));
+        List<ProjectDto> projectDto = convertJsonToProjectDto(response.getBody());
+        assertThat(projectDto.size(), equalTo(1));
     }
 
     @After
@@ -329,10 +304,8 @@ public class ProjectControllerTest extends TestCase {
         super.tearDown();
         baseUrl = null;
         testRestTemplate = null;
-        taskRepository.deleteAll();
         projectRepository.deleteAll();
         userRepository.deleteAll();
-        parentTaskRepository.deleteAll();
     }
 
     private List<ProjectDto> convertJsonToProjectDto(String json) throws Exception {
