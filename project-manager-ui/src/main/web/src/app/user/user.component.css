@@ -1,0 +1,104 @@
+
+#addUserForm{
+  margin: 5px;
+  display: table;
+  text-align: left;
+}
+
+input{
+  color:black;
+  box-sizing: border-box;
+  width: 400px !important;
+  background-color: rgb(240, 240, 240);
+}
+#viewuser tr:hover {background-color: #ddd;}
+
+#viewuser th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: grey;
+  color: white;
+}
+
+#userSearchText
+{
+  margin: 20px;
+}
+label {
+  color: black;
+  float: left;
+  margin: 25px;
+  width : 100px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+small
+{
+  padding-left: 25px;
+}
+
+#submit,#update{
+  margin-left: 150px;
+  border-radius: 10px;
+  background-color:grey;
+  border-color: black;
+  position: center;
+  top: 90%;
+}
+#reset,#cancel{
+  margin-left: 20px;
+  border-radius: 10px;
+  background-color:grey;
+  border-color: black;
+  position: center;
+  top: 90%;
+}
+* {
+  font-family: "Trebuchet MS";
+  font-style: italic;
+}
+
+.asc
+{
+    background-color: lightgreen;
+}
+.dsc
+{
+    background-color: lightpink;
+}
+.sortButton
+{
+  float: left;
+  margin: 25px;
+  width : 175px;
+  font-weight: bold;
+  font-style: italic;
+}
+small
+{
+  padding-left: 25px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid blue;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.dotted-hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 2px dotted blue;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.form-group {
+  margin-bottom: 0px!important;
+}

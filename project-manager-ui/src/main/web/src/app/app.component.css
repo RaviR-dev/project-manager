@@ -1,0 +1,24 @@
+h2 {
+  color:black;
+  text-align: center;
+}
+a {
+  color: black;
+  display: inline-block;
+  width:100%;
+  height:100%;
+  text-decoration: none;
+}
+
+* {
+  font-family: "Helvetica";
+  font-style: border;
+}
+.active
+{
+  background-color: rgb(210, 229, 235);
+}
+#addTaskDiv,#viewTaskDiv, #addUserDiv, #addProjectDiv {
+  border-color: blue;
+  text-align: center;
+}
