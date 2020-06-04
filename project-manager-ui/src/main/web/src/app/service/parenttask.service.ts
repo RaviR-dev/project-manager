@@ -7,7 +7,7 @@ import {ParentTask} from "../model/parenttask";
   providedIn: 'root'
 })
 export class ParenttaskService {
-  private baseUrl = 'http://localhost:8080/projectmanager/parenttask';
+  private baseUrl = 'http://localhost:8081/projectmanager/parenttask';
 
   constructor(private http: HttpClient) {
   }
