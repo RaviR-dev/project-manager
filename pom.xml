@@ -3,7 +3,7 @@
 
   <groupId>com.cts.fullstack.assignment</groupId>
   <artifactId>project-manager</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
   <name>project-manager</name>
   

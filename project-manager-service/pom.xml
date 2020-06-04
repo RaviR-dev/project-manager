@@ -8,7 +8,7 @@
   <parent>
         <artifactId>project-manager</artifactId>
         <groupId>com.cts.fullstack.assignment</groupId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
   </parent>
   
   <properties>
