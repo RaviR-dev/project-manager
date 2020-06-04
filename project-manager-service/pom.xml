@@ -90,6 +90,6 @@
             <targetPath>.</targetPath>
         </resource>
     </resources>
-	<finalName>project-manager</finalName>
+	<jar.finalName>project-manager</jar.finalName>
   </build>
 </project>
