@@ -40,6 +40,7 @@ export class ProjectComponent implements OnInit {
     this.userService.getAllUsers().subscribe(userDtos => {
       this.users = userDtos;
     });
+    this.projectModel.priority = 0;
     this.projectModel.startDateString = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
     this.projectModel.endDateString = this.datePipe.transform(new Date(new Date().getTime() + 86400000), 'yyyy-MM-dd');
   }

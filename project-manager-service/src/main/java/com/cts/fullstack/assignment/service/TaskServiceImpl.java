@@ -95,12 +95,14 @@ public class TaskServiceImpl implements TaskService {
         TaskDto taskDto = new TaskDto();
         taskDto.setStatus(task.isStatus());
         taskDto.setEndDate(task.getEndDate());
-        taskDto.setParentId(task.getParentTask().getParentId());
         taskDto.setPriority(task.getPriority());
         taskDto.setStartDate(task.getStartDate());
         taskDto.setTask(task.getTask());
         taskDto.setTaskId(task.getTaskId());
-        taskDto.setParentTask(task.getParentTask().getParentTask());
+        if (task.getParentTask() != null) {
+            taskDto.setParentId(task.getParentTask().getParentId());
+            taskDto.setParentTask(task.getParentTask().getParentTask());
+        }
         taskDto.setProjectId(task.getProject().getProjectId());
         taskDto.setProject(task.getProject().getProject());
         taskDto.setUserId(task.getUser().getUserId());

@@ -107,15 +107,12 @@ export class AddtaskComponent implements OnInit {
         );
     }
     else {
-      if (!this.taskModel.userId || !this.taskModel.projectId || !this.taskModel.parentId) {
+      if (!this.taskModel.userId || !this.taskModel.projectId ) {
         if (!this.taskModel.userId) {
           this.userErrorMessage = "User is required";
         }
         if (!this.taskModel.projectId) {
           this.projectErrorMessage = "Project is required";
-        }
-        if (!this.taskModel.parentId) {
-          this.parentTaskErrorMessage = "Parent Task is required";
         }
         return false;
       }

@@ -25,6 +25,9 @@ public class ParentTaskServiceImpl implements ParentTaskService {
 
     @Override
     public ParentTask getParentTaskById(Integer parentId) {
+    	if (parentId == null) {
+    		return null;
+    	}
         Optional<ParentTask> parentTask = parentTaskRepository.findById(parentId);
         return parentTask.orElse(null);
     }

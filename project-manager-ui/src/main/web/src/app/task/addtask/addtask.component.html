@@ -30,7 +30,7 @@
     </div>
     <div class="form-group form-inline">
       <label>Parent Task</label>
-      <input type="text" [disabled]="true" required class="form-control"
+      <input type="text" [disabled]="true" class="form-control"
              value="{{taskModel.parentId}} - {{taskModel.parentTask}}" autocomplete="off">
       <button type="button" [disabled]="isParentTask" (click)="openParentTaskSubModel(contentparenttask)" style="margin-left: 25px" class="glyphicon glyphicon-check">Search</button>
       <small class="text-danger" [class.d-none]="!parentTaskErrorMessage">{{parentTaskErrorMessage}}</small>
