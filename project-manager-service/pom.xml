@@ -90,5 +90,6 @@
             <targetPath>.</targetPath>
         </resource>
     </resources>
+	<finalName>project-manager</finalName>
   </build>
 </project>
